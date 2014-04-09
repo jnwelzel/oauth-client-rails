@@ -13,6 +13,7 @@
     <![endif]-->
 
     <%= stylesheet_link_tag "application", :media => "all" %>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
     <!-- For third-generation iPad with high-resolution Retina display: -->
     <!-- Size should be 144 x 144 pixels -->
@@ -49,9 +50,16 @@
           <a class="brand" href="#">OauthClient</a>
           <div class="container nav-collapse">
             <ul class="nav">
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
+              <li><a href="#"><i class="fa fa-comment"></i> Contact</a></li>
+              <li><a href="#"><i class="fa fa-info-circle"></i> About Us</a></li>
+            </ul>
+            <ul class="nav pull-right">
+              <% if current_user %>
+              <li><a href="#"><%= current_user.first_name << " " << current_user.last_name %></a></li>
+              <li><a href="/logout"><i class="fa fa-sign-out"></i> Log Out</a></li>
+              <% else %>
+              <li><a href="/login"><i class="fa fa-sign-in"></i> Log In</a></li>  
+              <% end %>
             </ul>
           </div><!--/.nav-collapse -->
         </div>

@@ -1,6 +1,11 @@
 OauthClient::Application.routes.draw do
   get "omniauth_callbacks/inkdrop"
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_scope :user do
+    get 'logout', :to => 'devise/sessions#destroy', :as => :user_logout
+    get 'login' => 'devise/sessions#new', as: :user_login
+  end
+
   get "home/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -10,9 +15,6 @@ OauthClient::Application.routes.draw do
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
-
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
