@@ -1,3 +1,10 @@
+PATH
+  remote: ~/dev/rails/omniauth-inkdrop
+  specs:
+    omniauth-inkdrop (0.0.1)
+      multi_json
+      omniauth-oauth (~> 1.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -45,6 +52,7 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.0.2)
+    hashie (2.0.5)
     hike (1.2.3)
     i18n (0.6.9)
     jbuilder (1.5.3)
@@ -66,7 +74,15 @@ GEM
     mime-types (1.25.1)
     minitest (4.7.5)
     multi_json (1.9.2)
+    oauth (0.4.7)
+    omniauth (1.1.4)
+      hashie (>= 1.2, < 3)
+      rack
+    omniauth-oauth (1.0.1)
+      oauth
+      omniauth (~> 1.0)
     orm_adapter (0.5.0)
+    pg (0.17.1)
     polyglot (0.3.4)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -88,12 +104,6 @@ GEM
     rdoc (4.1.1)
       json (~> 1.4)
     ref (1.0.5)
-    sass (3.2.18)
-    sass-rails (4.0.2)
-      railties (>= 4.0.0, < 5.0)
-      sass (~> 3.2.0)
-      sprockets (~> 2.8, <= 2.11.0)
-      sprockets-rails (~> 2.0.0)
     sdoc (0.4.0)
       json (~> 1.8)
       rdoc (~> 4.0, < 5.0)
@@ -140,8 +150,9 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   less-rails
+  omniauth-inkdrop!
+  pg
   rails (= 4.0.4)
-  sass-rails (~> 4.0.2)
   sdoc
   sqlite3
   therubyracer

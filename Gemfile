@@ -7,15 +7,21 @@ gem 'rails', '4.0.4'
 gem 'sqlite3'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.2'
+# gem 'sass-rails', '~> 4.0.2'
 
-# Twitter Bootstrap
+# Twitter Bootstrap for stylin
 gem "therubyracer"
 gem "less-rails" #Sprockets (for asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
 
-# Devise authentication
+# Devise for authenticatin
 gem 'devise'
+
+# PostgreSQL for databasin
+gem 'pg'
+
+# Omnioauth for authenticatin too
+gem 'omniauth-inkdrop', :path => '~/dev/rails/omniauth-inkdrop'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
