@@ -230,8 +230,8 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  require "omniauth-inkdrop"
-  config.omniauth :inkdrop, "9b87675da9b8c26d7598d11b298303772dfece78", "65d1ea73f9a77ba0fa781fadcc7436276b3ea5e2"
+  # require "omniauth-inkdrop"
+  config.omniauth :inkdrop, "6c50d15a816c8aa7d97657adba2f98648bee7204", "9bdc9752e26de86f754dc32470a11f3bbc932f00"
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
