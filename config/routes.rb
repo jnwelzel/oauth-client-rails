@@ -1,4 +1,6 @@
 OauthClient::Application.routes.draw do
+  resources :posts
+
   get "omniauth_callbacks/inkdrop"
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   devise_scope :user do

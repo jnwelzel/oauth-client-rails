@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :omniauthable, :omniauth_providers => [:inkdrop]
 
   def self.find_for_inkdrop_oauth(auth)
-    where(auth.slice(:provider, :uid)).first_or_create do |user|
+    u = where(auth.slice(:provider, :uid)).first_or_create do |user|
       user.provider = auth.provider
       user.uid = auth.uid
       user.email = auth.info.email
@@ -13,9 +13,12 @@ class User < ActiveRecord::Base
       user.first_name = auth.info.first_name
       user.last_name = auth.info.last_name
       user.alias = auth.info.nickname
-      user.token = auth.credentials.token
-      user.secret = auth.credentials.secret
     end
+    # This way the access token data will always be fresh
+    u.token = auth.credentials.token
+    u.secret = auth.credentials.secret
+    u.save
+    u
   end
 
   def self.new_with_session(params, session)
