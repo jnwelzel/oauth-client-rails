@@ -33,4 +33,9 @@ class User < ActiveRecord::Base
     "#{self.first_name} #{self.last_name}"
   end
 
+  def access_token
+    consumer_key = Rails.application.config.devise.omniauth_configs[:inkdrop].strategy.consumer_key
+    OAuth::AccessToken.new consumer_key, self.token, self.secret
+  end
+
 end

@@ -7,12 +7,12 @@ gem 'rails', '4.0.4'
 gem 'sqlite3'
 
 # Use SCSS for stylesheets
-# gem 'sass-rails', '~> 4.0.2'
+gem 'sass-rails', '~> 4.0.2'
 
 # Twitter Bootstrap for stylin
-gem "therubyracer"
-gem "less-rails" #Sprockets (for asset pipeline) supports LESS
-gem "twitter-bootstrap-rails"
+# gem 'therubyracer'
+# gem 'less-rails' #Sprockets (for asset pipeline) supports LESS
+gem 'twitter-bootstrap-rails'
 
 # Devise for authenticatin
 gem 'devise'
@@ -57,3 +57,7 @@ end
 
 # Use debugger
 gem 'debugger', group: [:development, :test]
+
+gem 'slide-down-alerts-rails'
+
+gem 'angularjs-rails'
