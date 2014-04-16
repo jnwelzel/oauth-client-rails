@@ -1,4 +1,13 @@
 angular.module('oauthClient.controllers', [])
-  .controller 'PostsCtrl', ["$scope", "Post", ($scope, Post) ->
-    $scope.posts = Post.query()
-  ]
+
+@PageCtrl = ["$scope", ($scope) ->
+  $scope.tpl = "home.html"
+]
+
+@PostCtrl = ["$scope", "$http", ($scope, $http) ->
+  $scope.posts = {}
+  $http.get('/posts').success((data) ->
+    console.log data
+    $scope.posts = data
+  )
+]

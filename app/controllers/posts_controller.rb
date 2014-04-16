@@ -4,7 +4,7 @@ class PostsController < ApplicationController
     access_token = Client.build_client current_user
     response = access_token.get("/posts")
     if response.code == "200"
-      @posts = response.body.to_json
+      @posts = JSON.parse response.body
     else
       flash[:error] = "Server error [#{response.code}]: #{response.body}"
     end

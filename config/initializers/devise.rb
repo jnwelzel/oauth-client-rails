@@ -231,7 +231,7 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   # require "omniauth-inkdrop"
-  config.omniauth :inkdrop, "bdd06f14fc1a0f3bf11d3c77ac83514110e96e9a", "933e689c5d7f6a002a9613288298b7547df7ae25"
+  config.omniauth :inkdrop, "21a33d194a2dc6a849dc83a7fcd78b9940a0b6aa", "2c4deb037fd0f128906ef30e03d8f9886ff77a10"
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
